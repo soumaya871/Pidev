@@ -1,0 +1,84 @@
+
+
+        
+ 
+    <!-- breadcrumb-section end -->
+    <!-- product tab start -->
+   
+    <div class="container" *ngIf="cart.length">
+        <div class="row">
+            <div class="col-12">
+                <h3 class="title mb-30 pb-25 text-capitalize">Your cart items</h3>
+                <div class="table-responsive">
+                    <table class="table">
+                        <thead class="thead-light">
+                            <tr>
+                                <th class="text-center" scope="col">Product Name</th>
+                                <th class="text-center" scope="col">Qty</th>
+                                <th class="text-center" scope="col">Price</th>
+                                <th class="text-center" scope="col">action</th>
+                             
+
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let data of cart">
+                               
+                                <td class="text-center">
+                                    <span class="whish-title">{{ data.product.product_name}}</span>
+                                </td>
+                             
+                                <td class="text-center">
+                                    <div class="product-count style">
+                                        <div class="count d-flex justify-content-center">
+                                            <input type="text" [value]="data.number" >
+                                            <div class="button-group">
+                                                <button (click)=" AddToCart(data.product)" class="count-btn increment"><i
+                                                class="glyphicon glyphicon-plus"></i></button>
+                                                <button (click)="deleteFromCart(data.product)" class="count-btn decrement"><i
+                                                class="glyphicon glyphicon-minus"></i></button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="text-center">
+                                    <span class="whish-list-price">
+                                {{ (data.product.product_price*data.number).toFixed(2)}}Dt
+                            </span></td>
+
+                                <td class="text-center">
+                                    <a href="home"> <span class="trash"><i  class="glyphicon glyphicon-trash"></i> </span></a>
+                                </td>
+
+                            </tr>
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="col-12">
+                <a routerLink="/checkout" class="btn btn-block theme-btn--dark1 btn--lg mt-70" style="width: 130px">buy now</a>
+            </div>
+        </div>
+    </div>
+    <div class="container" *ngIf="!cart.length">
+       
+        <h3 class="title mb-30 pb-25 text-capitalize">Your cart is empty</h3>
+        <div class="container-fluid mt-100">
+            <div class="row">
+                <div class="col-md-12">
+                  
+                       
+                        <div >
+                            <div class="col-sm-12 empty-cart-cls text-center"> <img src="https://i.imgur.com/dCdflKN.png" width="130" height="130" class="img-fluid mb-4 mr-3">
+                                
+                                <h3 class="text-custom"><strong  class="text-custom" > 𝑌𝑜𝑢𝑟 𝐶𝑎𝑟𝑡 𝑖𝑠 𝐸𝑚𝑝𝑡𝑦</strong></h3>
+                                <h4>Haven't added anything yet ? Get shopping!</h4>   <a routerLink="/Products" class="btn btn-block theme-btn--dark2 btn--lg mt-70" style="width: 200px">Go back to shop</a>
+                            </div>
+                        </div>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+

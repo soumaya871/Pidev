@@ -1,0 +1,85 @@
+<nav class="navbar">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <a href="javascript:void(0);" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false"></a>
+            <a href="javascript:void(0);" class="bars"></a>
+            <a class="navbar-brand" href="index.html"></a>
+        </div>
+        <div class="collapse navbar-collapse" id="navbar-collapse">
+            <ul class="nav navbar-nav navbar-left">
+                <div class="image">
+                    <img src="assets/images/logo.png" width="160" height="60" alt="LOGO" />
+                </div>
+            </ul>
+            
+            
+            <ul class="nav navbar-nav navbar-right">
+             
+              <a [routerLink]="['/home']">
+                <span>Home</span>
+               </a>
+               <a [routerLink]="['/Products']">
+                 <span>Products</span>
+                </a>
+                <a [routerLink]="['/Test']">
+                  <span>Product</span>
+                 </a>
+                 <a [routerLink]="['/Category']">
+                  <span>Category</span>
+                </a>
+                <a [routerLink]="['/Orders']">
+                   <span>Order</span>
+                 </a>
+                <a [routerLink]="['/Users']">
+                  <span>Account</span>
+                </a>
+               <a [routerLink]="['/deliveryagent']">
+                 <span>Delivery Agent</span>
+                </a>
+                <a [routerLink]="['/Bills']">
+                  <span>Bills</span>
+                 </a>
+                <a [routerLink]="['/Contact']">
+                  <span>Contact</span>
+                 </a>
+                 <a [routerLink]="['/Delivery']">
+                  <span>Delivery</span>
+                 </a>
+                 <a [routerLink]="['/Complaint']">
+                  <span>Complaint</span>
+                 </a>
+                 <a [routerLink]="['/MapBox']">
+                  <span>MapBox</span>
+                 </a>
+
+                 <li> 
+                  <a [routerLink]="['/caddies']">
+                      <img class=" img-rounded" src="assets/images/caddy.png">
+                      <i class="icon-bag"></i>
+                      <span class="badge cbdg1">{{cartData.len}}</span>
+                 
+                  <span class="cart-total position-relative" ></span>  
+                </a>
+             </li> 
+
+
+
+                 <div class="dropdown">
+                  <button class="dropbtn">Log in</button>
+                  <div class="dropdown-content">
+                    <a (click)="login()">Log in</a>
+                    <a [routerLink]="['/register-client']" >Sign up </a>
+                    <a [routerLink]="['/register-seller']">Become a Seller</a>
+                    <a [routerLink]="['/Contact']">Become a Delivery Agent</a>
+
+                  </div>
+                </div> 
+                 
+
+            </ul>
+          
+          </div>
+    
+        </div>
+</nav>
+ 

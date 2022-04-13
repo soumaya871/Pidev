@@ -1,0 +1,109 @@
+<h1>hello</h1>
+<div class ="container">
+    <div class="card">
+
+
+
+        <h3>Create Delivery</h3>
+<div [hidden]="submitted" style="width: 400px;">
+  <fieldset>
+  <form (ngSubmit)="onSubmit()">
+    <div class="form-row">
+      <label for="name">   Price :</label>
+      <input type="text" class="form-control" id="price" placeholder="Price" required [(ngModel)]="delivery.price" name="price" required ngModel #p="ngModel">
+    </div>
+    <div class="alert alert-danger" *ngIf="p.invalid && p.touched">
+      the price is a required field
+    </div>
+
+    <div class="form-row">
+      <label for="name"> DateDel :</label>
+      <input type="Date" class="form-control" id="date_Del" placeholder="DateDelivery" required [(ngModel)]="delivery.dateDel" name="date_Del"  required ngModel #d="ngModel">
+    </div>
+    <div class="alert alert-danger" *ngIf="d.invalid && d.touched">
+      the date is a required field
+    </div>
+
+    <div class="form-row">
+      <label for="name"> Address :</label>
+      <input type="text" class="form-control" id="adress" placeholder="Adress" required [(ngModel)]="delivery.address" name="address"  required ngModel #a="ngModel">
+    </div>
+    <div class="alert alert-danger" *ngIf="a.invalid && a.touched">
+      the address is a required field
+    </div>
+
+      <div class="form-row">
+        <label for="name"> Lattitude :</label>
+        <input type="text" class="form-control" id="lattitude" placeholder="Lattitude" required [(ngModel)]="delivery.lattitude" name="lattitude">
+      </div>
+
+      <div class="form-row">
+        <label for="name"> Longitude : </label>
+        <input type="text" class="form-control" id="longitude" placeholder="Longitude" required [(ngModel)]="delivery.longitude" name="longitude">
+      </div>
+
+    
+    <button type="submit" class="btn btn-success" [disabled]="p.invalid || d.invalid || a.invalid">Submit</button>
+  </form>
+</fieldset>
+</div>
+
+<div [hidden]="!submitted">
+  <h4>You submitted successfully!</h4>
+  <!-- <button class="btn btn-success" (click)="newDelivery()">Add</button> -->
+</div>
+
+
+
+
+
+
+
+        <h3 class="text-center">  Deliverys List  </h3>
+        <div class="card-body">
+            <form>
+                <div class="form-group-row">
+                    <label for="search" class="col-sm-2 col-form-label" style="text-align: right;">Search:</label>
+                    <div class="col-sm-6">
+                    <input  type="text"  class="form-control" id="search"   />
+                  </div> 
+                </div>
+            </form>
+        
+            <table class="table table-bordered"  >
+                <thead class="thead-dark">
+                  <tr>
+                   
+                    <th scope="col">Price:</th>
+                    <th scope="col">DateDel:</th>
+                    <th scope="col">Address:</th>
+                    <th scope="col">Lattitude:</th>
+                    <th scope="col">Longitude:</th>
+                    <th scope="col">Etat:</th>
+                    <th scope="col">DeliveryAgent_Id</th>
+                    <th scope="col">Actions</th>
+                  </tr>  
+                
+                </thead>
+                <tbody >
+                    <tr  *ngFor = "let Delivery of deliverys ">
+                        
+                        
+                        <td scope="col">{{Delivery.price}}</td>
+                        <td scope="col">{{Delivery.dateDel}}</td>
+                        <td scope="col">{{Delivery.address}}</td>
+                        <td scope="col">{{Delivery.lattitude}}</td>
+                        <td scope="col">{{Delivery.longitude}}</td>
+                        <td scope="col">{{Delivery.etat}}</td>
+                        <td scope="col">{{Delivery.deliveryagent.id}}</td>
+                        
+                        <td ><button class="btn btn-danger" (click)="DeleteDelivery(Delivery.id)"><span class="glyphicon glyphicon-remove"></span>&nbsp;Delete</button> &nbsp; <button class="btn btn-info" >Update</button> </td>
+
+                    </tr>
+                  
+                </tbody>
+            </table>
+        </div>
+      
+
+    </div>

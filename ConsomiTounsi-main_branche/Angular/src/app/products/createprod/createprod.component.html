@@ -1,0 +1,111 @@
+<br><br><br><br><br>
+
+<h1>CO</h1>
+<form #f="ngForm"  >
+    <div class="col-md-8 offset-md-3">
+        <h2> <span class="badge bg-secondary">Create Product</span></h2>
+    
+    
+        <div class="form-group">
+            <label >Product Name</label>
+         <input type="text" class="form-control"  id="productName"
+           [(ngModel)]="product.product_name" name="productName" required  ngModel #n="ngModel"
+           pattern="[a-z]*" >
+           <div *ngIf="n.invalid && n.touched">
+           <div *ngIf="n.errors.required"> Product name is a required field</div>
+           <div *ngIf="n.errors.pattern"> Product name max 30</div>
+         </div>
+        <label >Product Price</label>
+        <input type="text" class="form-control" id="productPrice"
+          [(ngModel)]="product.product_price" name="productPrice" required  ngModel #p="ngModel"
+          pattern="[0-9]*" >
+     <div *ngIf="p.invalid && p.touched">
+        <div *ngIf="p.errors.required"> Product Price is a required field</div>
+        <div *ngIf="p.errors.pattern"> Product Price must be a number</div>
+     </div>
+        <label >Productbar_code</label>
+        <input type="text" class="form-control" id="productbar_code"
+        [(ngModel)]="product.product_bar_code" name="productbar_code"  required  ngModel #c="ngModel"
+        pattern=".{13}">
+        <div *ngIf="c.invalid && c.touched">
+         <div *ngIf="c.errors.required"> Product Code a bar_code is a required field </div>
+         <div *ngIf="c.errors.pattern"> Product name price must be a number</div>
+         
+       </div>
+        <label >Product  Quantity</label>
+        <input type="text" class="form-control" id="productQuantity"
+        [(ngModel)]="product.quantity" name="productQuantity"  required  ngModel #q="ngModel">
+        <div *ngIf="q.invalid && q.touched" >
+          Product Quantity is a required field
+       </div>
+       <label >Product Type</label>
+       <input type="text" class="form-control" id="product_type"
+     [(ngModel)]="product.product_type" name="product_type"  required  ngModel #t="ngModel">
+     <div *ngIf="t.invalid && t.touched">
+       Product Type  is a required field
+    </div>
+        <label >Product  Date d'expedition</label>
+        <input type="text" class="form-control" id="productdateProd"
+      [(ngModel)]="product.dateProd" name="productdateProd"  required  ngModel #d="ngModel">
+      <div *ngIf="d.invalid && d.touched">
+        Product Date d'expedition is a required field
+     </div>
+        <label >Product  Date d'expiration</label>
+        <input type="text" class="form-control" id="productdateexp"
+      [(ngModel)]="product.dateExp" name="productdateexp"  required  ngModel #l="ngModel">
+      <div *ngIf="l.invalid && l.touched">
+        Product date d'expiration is a required field
+     </div>
+        <label >Product  Description</label>
+         <input type="text" class="form-control" id="product description"
+          [(ngModel)]="product. description" name="product description"  required  ngModel #e="ngModel">
+          <div *ngIf="e.invalid && e.touched">
+          Product Description is a required field
+         </div>
+        </div>
+    
+    <div class="container row">
+      <div class="col-md-12">
+          <h1>Upload Image</h1>
+      </div>
+    </div>
+    
+    <div class="container row">
+      <div class="col-md-6">
+          <input type="file" (change)="onFileChanged($event)">
+    
+      </div>
+      <div class="col-md-6">
+          <input type="button" (click)="onUpload()" value="upload">
+      </div>
+    </div>
+    <hr />
+    <div class="container row">
+      <div class="col-md-12">
+          <div *ngIf=message>{{message}}</div>
+      </div>
+    </div>
+    
+    <div class="container row">
+      <div class="col-md-6">
+          <input type="text" class="form-control" id="image" placeholder="image" [(ngModel)]="image"
+              name="image" />
+      </div>
+      <div class="col-md-6">
+          <input type="button" (click)="getImage()" value="Get Image">
+    
+      </div>
+    </div>
+    
+    <div class="container row">
+      <div class="col-md-12">
+          <div *ngIf=retrievedImage>
+              <img [src]="retrievedImage">
+          </div>
+      </div>
+    </div>
+    <div>
+        
+      <button type="submit"  class="btn btn-primary" [disabled]="f.invalid" (click)="saveProd()" >Save Product</button>
+  
+  </div>

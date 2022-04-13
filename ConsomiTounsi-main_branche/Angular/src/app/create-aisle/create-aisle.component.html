@@ -1,0 +1,32 @@
+ 
+<br><br><br><br><br><br><br><br><br><br>
+<br>
+<div class="col-md-6 offset-md-3">
+
+    <h3> Create Aisle</h3>
+    <form (ngSubmit) = "onSubmit2()">
+    
+            <div class="form-group">
+                <label> Categorie</label>
+                
+                <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example" id="Categorie" name = "Categorie" [(ngModel)] = "aisle.categoryaisle">
+                    <option selected>Select a Category</option>
+                    <option value="Informatique">Informatique</option>
+                    <option value="bureautique">bureautique</option>
+                    <option value="ElectroMenagé">ElectroMenagé</option>
+                  </select>
+            </div>
+            <div class="form-group">
+                  <label> Type</label>
+                  <select class="form-select form-select-sm" aria-label=".form-select-lg example" [(ngModel)] = "aisle.typeaisle" id="Type" name = "Type">
+                    <option selected>Select a Type</option>
+                    <option value="food_product">food_product</option>
+                    <option value="cleaning_product">cleaning_product</option>
+                    <option value="beauty_product">beauty_product</option>
+                    <option value="technology_product">technology_product</option>
+                    <option value="indistrual_product">indistrual_product</option>
+                  </select>
+                  </div>
+            <button class="btn btn-success" type="submit"> Submit</button>
+    </form>
+    </div>

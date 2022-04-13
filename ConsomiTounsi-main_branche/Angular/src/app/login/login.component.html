@@ -1,0 +1,37 @@
+<body>
+    <form #form="ngForm" (ngSubmit)="login()" > 
+    
+  
+    <div class="container">
+        <p class="h4 mb-4">Sign in</p>
+      <label for="uname"><b>Username</b></label>
+      <input type="text" placeholder="Enter Username" name="userName" [(ngModel)]=client.userName required ngModel #u="ngModel" >
+      <div class="alert alert-danger"  *ngIf="u.invalid && u.touched" >
+        this username is requiered
+      </div>
+      <label for="psw"><b>Password</b></label>
+      <input type="password" placeholder="Enter Password" name="password" [(ngModel)]=client.password required  ngModel #p="ngModel"  >
+      <div class="alert alert-danger"  *ngIf="p.invalid && p.touched" >
+        this password is requiered
+      </div>
+   
+      <button type="submit" (click)="login()" [disabled]="form.invalid">Login</button>
+      
+    </div>
+   <!-- Register -->
+  
+    <div class="container" style="background-color:#f1f1f1">
+      <ul>
+        <span>not a memeber?</span>
+        <a  [routerLink]="['/register-client']">
+          <span>Register here </span>
+         </a>
+    </ul> 
+   
+  
+     
+      <button type="button" [routerLink]="['/home']">Cancel</button>
+    
+    </div>  
+    </form>
+</body>

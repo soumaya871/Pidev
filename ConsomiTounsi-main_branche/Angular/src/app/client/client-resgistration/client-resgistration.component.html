@@ -1,0 +1,62 @@
+<!-- Default form register -->
+<body>
+  <div class="container">
+    <form  #f="ngForm" (ngSubmit)="OnSubmit()" method="post">
+    <p class="h4 mb-4">Sign up</p>
+        <!-- First name -->
+        <input type="text"  class="form-control" name="firstname " placeholder="First name" required  ngModel  [(ngModel)]="client.firstName"  #firstname="ngModel">
+        <div class="alert alert-danger"  *ngIf="firstname.invalid && firstname.touched" >
+          <div *ngIf="firstname.errors.required"> field is requiered</div>
+        </div>
+        <!-- Last name -->
+        <input type="text"  class="form-control" placeholder="Last name" name="last name " required ngModel    [(ngModel)]="client.lastName" #lastname="ngModel">
+        <div class="alert alert-danger"  *ngIf="lastname.invalid && lastname.touched" >
+          <div > field is requiered</div>
+        </div>
+         
+         <!-- User name -->
+         <input type="text" class="form-control" placeholder="User name" name="username" required ngModel [(ngModel)]="client.userName" #username="ngModel" >
+         <div class="alert alert-danger"  *ngIf="username.invalid && username.touched" >
+          <div *ngIf="username.errors.required"> field is requiered</div>
+        </div>
+          
+        
+        <!-- Phone number -->
+        <input type="text"  class="form-control" placeholder="Phone number" name="phonenumber" required  pattern = "[0-9]{8}"  ngModel  [(ngModel)]="client.phoneNumber" #phonenumber="ngModel"  >
+        <div class="alert alert-danger"  *ngIf="phonenumber.invalid && phonenumber.touched" >
+          <div *ngIf="phonenumber.errors.required"> field is requiered</div>
+          <div *ngIf="phonenumber.errors.pattern"> phone number doesn't seem right </div>
+        </div>
+          
+         
+    <!-- adress -->
+    <input type="text" class="form-control" placeholder="adress" name="adress" required ngModel [(ngModel)]="client.adress" #adress="ngModel" >
+    <div class="alert alert-danger"  *ngIf="adress.invalid && adress.touched" >
+     <div *ngIf="adress.errors.required"> field is requiered</div>
+   </div>
+        <!-- E-mail -->
+        <input type="email"  class="form-control" placeholder="  E-mail" required ngModel   name="email "  [(ngModel)]="client.email" #email="ngModel" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$">
+        <div class="alert alert-danger"  *ngIf="email.invalid && email.touched" >
+          <div *ngIf="email.errors.required"> field is requiered</div>
+          <div *ngIf="email.errors.pattern"> email doesn't seem right  </div>
+        </div>
+         
+        <!-- Password -->
+        <input type="password"  class="form-control" placeholder="Password" name="psw" required   ngModel  [(ngModel)]="client.password" #password="ngModel" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" >
+        
+        <div class="alert alert-danger"  *ngIf="password.invalid && password.touched" >
+          <div *ngIf="password.errors.required"> field is requiered</div>
+          <div *ngIf="password.errors.pattern"> Must contain at least one  number and one uppercase and lowercase letter, and at least 8 or more characters </div>
+        </div>
+        
+
+        
+          <!-- Sign up button -->
+        <button  type="submit"  [disabled]="f.invalid"   [routerLink]="['/CLIENT']">Create your account</button>
+        <button  type="button" class="cancelbtn" [routerLink]="['/home']" >Cancel</button>
+    
+      </form>
+    </div>
+    
+
+  </body>

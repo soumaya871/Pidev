@@ -1,0 +1,55 @@
+<h2> Users List</h2>
+<input type="text" id="myInput" onkeyup="search()" placeholder="Search for names..">
+
+<div class="container main-container">
+<div class="row">
+    <div class="col-md-8">
+        <table class="table table-striped">
+   
+            <thead>
+                <tr>
+                    <th>first Name</th>
+                    <th>last Name</th>
+                    <th>email</th>
+                    <th>role</th>
+                    <th></th>
+                </tr>
+                
+            </thead>
+            <tbody>
+                <tr *ngFor ="let client of clients"> 
+                    <td>{{client.firstName}}</td>
+                    <td>{{client.lastName}}</td>
+                    <td>{{client.email}}</td>
+                    <td>{{client.role}}</td>
+                
+                    <td>
+                    <div id="container">
+                        <button type="button home-button" id="button1" (Onclick)="delete(client)" >Block</button>
+                        <button type="button contact-button" id="button2">Update</button>
+                        <button type="button contact-button" id="button3" (click)="Details(client)">Show Details</button>
+                    </div>
+                </td>
+                </tr>
+        </tbody>
+        </table>
+        
+    </div>
+    <div class="col-md-4">
+        <div class="panel panel-default">
+            <div class="panel-heading">Details </div>
+                <div class="panel-body">
+              
+              {{fullname}} <br>
+              {{email}} <br>
+              {{number}} <br>
+              {{addess}}<br>
+              {{status}} <br>
+              {{role}} <br>
+          </div>
+        </div>
+    
+    </div>
+</div>
+
+</div>

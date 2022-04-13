@@ -1,0 +1,57 @@
+<h1>helloooooo</h1>
+<div class="container">
+
+
+
+   
+        
+    
+    
+  <div [hidden]="!submitted">
+    <h4 >You submitted successfully!</h4>
+</div>
+  </div>
+    
+        <div class="panel-heading">
+          <div class="card">
+        <h2 class="text-center">Complaints List</h2>
+ 
+        
+        <div class="panel-body">
+           
+                  <table   class="table table-bordered"  valign="bottom">
+         
+                <thead  >
+               
+                    <th>id_recl</th>
+                    <th>description</th>
+                    <th>Action</th>
+                   
+                </thead>
+
+                
+               
+                    <tbody>
+                       <tr *ngFor ="let Complaint of Complaints "> 
+                       
+                        <td>{{Complaint.id_recl}}</td>
+                        <td>{{Complaint.descrip}}</td>
+                        <td ><button class="btn btn-danger" (click)="deleteComplaints(Complaint.id_recl)">Delete</button>
+
+                        </td>
+                        
+
+                            
+                    </tr>
+                </tbody>
+            </table>
+
+            </div>
+   
+      
+     
+       
+        
+    
+
+  </div>

@@ -1,0 +1,11 @@
+@import"~bootstrap/dist/css/bootstrap.css";
+h2
+{   color: darkred;
+    font-family:"Comic Sans MS";
+}
+button mat-raised-button {
+    display: table-cell;
+    font-size: 14px;
+    margin-left: 8px;
+    min-width: 120px;
+  }

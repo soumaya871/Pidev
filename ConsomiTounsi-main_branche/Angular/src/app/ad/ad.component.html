@@ -1,0 +1,29 @@
+
+<h1>CO</h1>
+<br/>
+<a [routerLink]="['/createAd']">
+  <i class="material-icons"></i>
+  <span>Create Ads</span>
+  </a>
+<div class="container">
+    <div class="card">
+        <h3 class="text-center">Ads List</h3>
+        <div class="card-body">
+            <table class="table table-striped">
+                <thead>
+                    <th>id</th>
+                    <th>title</th>
+                    
+                </thead>
+                <tbody>
+                    <tr *ngFor ="let ad of ads">
+                        <td>{{ad.id}}</td>
+                        <td>{{ad.title}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+</div>
+

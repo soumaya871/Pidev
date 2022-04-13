@@ -1,0 +1,48 @@
+<h1>CO</h1>
+<form #f="ngForm" (ngSubmit)="onSubmit()">
+    <div class="col-md-8 offset-md-3">
+        <h2> <span class="badge bg-secondary">Update Product</span></h2>
+    
+    
+        <div class="form-group">
+            <label >Product Name</label>
+         <input type="text" class="form-control"  id="productName"
+           [(ngModel)]="product.product_name" name="productName"  ngModel required>
+      
+        <label >Product Price</label>
+        <input type="text" class="form-control" id="productPrice"
+          [(ngModel)]="product.product_price" name="productPrice" ngModel required>
+     
+        <label >Productbar_code</label>
+        <input type="text" class="form-control" id="productbar_code"
+        [(ngModel)]="product.product_bar_code" name="productbar_code"  ngModel required>
+    
+        <label >Product  Quantity</label>
+        <input type="text" class="form-control" id="productQuantity"
+        [(ngModel)]="product.quantity" name="productQuantity"  ngModel required>
+    
+        <label >Product  Date d'expedition</label>
+        <input type="text" class="form-control" id="productdateProd"
+      [(ngModel)]="product.dateProd" name="productdateProd"  ngModel required>
+     
+        <label >Product  Date d'expiration</label>
+        <input type="text" class="form-control" id="productdateProd"
+      [(ngModel)]="product.dateProd" name="productdateProd"  ngModel required>
+    
+        <label >Product  Description</label>
+         <input type="text" class="form-control" id="product description"
+          [(ngModel)]="product. description" name="product description"  ngModel required>
+       </div>
+
+       <label >Product Type</label>
+       <input type="text" class="form-control" id="product_type"
+     [(ngModel)]="product.product_type" name="product_type"  required  ngModel #t="ngModel">
+     <div *ngIf="t.invalid && t.touched">
+       Product Type  is a required field
+    </div>
+
+       <div>
+        
+        <button type="submit"  class="btn btn-primary"> Update Product</button>
+    
+    </div>

@@ -1,0 +1,30 @@
+<br><br><br><br><br><br><br><br>
+<h2> Aisles list</h2>
+<table class="table table-dark table-striped">
+    <thead>
+        <tr>
+            
+            <th>categorie</th>
+            <th>type</th>
+            <th>actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor = "let aisle of aisle">
+            
+            <td>{{aisle.categoryaisle}}</td>
+            <td>{{aisle.typeaisle}}</td>
+            
+            <td>
+                <button (click) = "updateAisle(aisle.id)" class="btn btn-info">Update</button>
+                <button (click) = "deleteAisle(aisle.id)" class="btn btn-danger" style="margin-left: 10px">Delete</button>
+                <button (click) = "aisleDetails(aisle.id)" class="btn btn-success" style="margin-left: 10px">View</button>
+                
+            </td>
+
+        </tr>
+    </tbody>
+</table>
+<br>
+<br>
+<button (click) = "sendemail()" class="btn btn-warning" style="margin-left: 10px">Are there empty aisles?</button>

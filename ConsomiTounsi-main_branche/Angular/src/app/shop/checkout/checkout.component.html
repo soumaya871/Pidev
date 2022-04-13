@@ -1,0 +1,177 @@
+<h1>helloooooo</h1>
+  
+        <div class="container">
+            <div class="card">
+                <div class="col-12">
+                    <div class="section-title text-center mb-15">
+                        <h2 class="title text-dark text-capitalize">Checkout</h2>
+                    </div>
+                </div>
+                <div class="col-12">
+                    <ol class="breadcrumb bg-transparent m-0 p-0 align-items-center justify-content-center">
+                        <li class="breadcrumb-item"><a href="#">Home</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">check out</li>
+                    </ol>
+                </div>
+     <!-------------------------------------------------------------------------->       
+
+<!-- breadcrumb-section end -->
+<!-- product tab start -->
+<section class="check-out-section pt-80 pb-50">
+    <div class="container">
+        <div class="card">
+            <div class="col-lg-12 mb-30">
+                <ul class="list-group cart-summary rounded-0">
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                        <ul class="items">
+                            <li *ngFor="let data of cart">{{ data.product.product_name}} x {{ data.number}} - PU: {{ data.product.product_price }} </li>
+                            <li>Shipping</li>
+                            <hr>
+                            <li>{{ cartData.len }} item</li>
+
+                        </ul>
+
+                        <ul class="amount">
+                            <li *ngFor="let data of cart">{{ (data.number*data.product.product_price).toFixed(2) }}Dt</li>
+                            <li>8Dt</li>
+                            <hr>
+                            <li>{{ cartData.cost }}</li>
+
+                        </ul>
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                        <ul class="items">
+                            <li>TVA (19%)</li>
+                            <li>Total TTC</li>
+                            <li>Total TTC+Shipping</li>
+                        </ul>
+                        <ul class="amount">
+                            <li>{{ (cartData.cost*0.19).toFixed(2) }}Dt</li>
+                            <li>{{ (cartData.cost*1.19).toFixed(2) }}Dt</li>
+                            <li>{{ (cartData.cost*1.19+8).toFixed(2) }}Dt</li>
+                        </ul>
+                    </li>
+        
+                    <li class="list-group-item text-center">
+                        <!--
+                        <button type="button" class="block" routerLink="/payment" (click)="showModal=true" data-toggle="modal" data-target="#myModal" > Payment 
+                            <i class="far fa-credit-card"></i>
+                        </button><br/>-->
+                        
+  
+  <!-- The Modal -->
+  
+  <div class="modal" id="myModal" [ngClass]="{'show':showModal}">
+        
+    <div class="modal-dialog">
+       
+  
+        <!-- Modal Header -->
+        <div class="modal-header">
+      
+          <button type="button" class="close" data-dismiss="modal"  (click)="showModal=false">&times;</button>
+        </div>
+  
+        <!-- Modal body -->
+        <div class="modal-body">
+           <!-- Credit Card Payment Form - START -->
+           
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 col-md-4 col-md-offset-4">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <div class="row">
+                           
+                            <button type="button" class="close" data-dismiss="modal"  (click)="showModal=false">&times;</button>
+                            <h3 class="text-center">Payment Details</h3>
+                           
+                            <div class="inlineimage"> <img class="img-responsive images" src="https://cdn0.iconfinder.com/data/icons/credit-card-debit-card-payment-PNG/128/Mastercard-Curved.png"> <img class="img-responsive images" src="https://cdn0.iconfinder.com/data/icons/credit-card-debit-card-payment-PNG/128/Discover-Curved.png"> <img class="img-responsive images" src="https://cdn0.iconfinder.com/data/icons/credit-card-debit-card-payment-PNG/128/Paypal-Curved.png"> <img class="img-responsive images" src="https://cdn0.iconfinder.com/data/icons/credit-card-debit-card-payment-PNG/128/American-Express-Curved.png"> </div>
+                        </div>
+                    </div>
+                    <div class="panel-body">
+                        <form role="form">
+                            <div class="row">
+                                <div class="col-xs-12">
+                                    <div class="form-row"> <label>CARD NUMBER</label>
+                                        <div class="input-group"> <input type="tel" class="form-control" placeholder="Valid Card Number" /> <span class="input-group-addon"><span class="fa fa-credit-card"></span></span> </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-xs-7 col-md-7">
+                                    <div class="form-row"> <label><span class="hidden-xs">EXPIRATION</span><span class="visible-xs-inline">EXP</span> DATE</label> <input type="tel" class="form-control" placeholder="MM / YY" /> </div>
+                                </div>
+                                <div class="col-xs-5 col-md-5 pull-right">
+                                    <div class="form-row"> <label>CV CODE</label> <input type="tel" class="form-control" placeholder="CVC" /> </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-xs-12">
+                                    <div class="form-row"> <label>CARD OWNER</label> <input type="text" class="form-control" placeholder="Card Owner Name" /> </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="panel-footer">
+                        <div class="row">
+                           
+                            <div class="col-xs-12"> <button  class="block"class="btn btn-success btn-lg btn-block">Confirm Payment</button> </div>
+                        
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+        </div>
+    </div>
+       
+   
+   <!--
+                        <button type="button" class="block" routerLink="/payment" (click)="showModal=true" data-toggle="modal" data-target="#myModal" > Payment 
+                            <i class="far fa-credit-card"></i>
+                        </button><br/>-->
+  
+  <!-- Button to Open the Modal -->
+<button type="button" class="block" (click)="showModal=true" data-toggle="modal" data-target="#myModal">
+    Payment 
+  </button>
+  
+
+
+
+                     
+                    <app-button-paypal></app-button-paypal>
+                        <div id="paypal-button" class="">Proceed to checkout</div>
+                      
+                     
+                    </li>
+                   
+                </ul>
+
+                <div class="delivery-info mt-20">
+                    <ul>
+                        <li>
+                            <img src="assets/images/10.png" alt="icon"> Security policy 
+                        </li>
+                        <li>
+                            <img src="assets/images/11.png" alt="icon"> Delivery policy 
+                        </li>
+                        <li class="mb-0">
+                            <img src="assets/images/12.png" alt="icon"> Return policy
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+</section>
+<app-bon></app-bon></div>
+
+</div>
+
+       

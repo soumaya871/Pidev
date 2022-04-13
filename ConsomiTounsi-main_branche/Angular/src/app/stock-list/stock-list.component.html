@@ -1,0 +1,28 @@
+<br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+<h2> Stock list</h2>
+<div class="container">
+<table class="table table-dark table-striped">
+    <thead>
+        <tr>
+            <th>id</th>
+            <th>categorie</th>
+            <th>type</th>
+            <th>actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor = "let stock of stock">
+            <td>{{ stock.id}}</td>
+            <td>{{ stock.stockCategorie}}</td>
+            <td>{{ stock.stockType}}</td>
+            <td>
+                <button (click) = "updateStock(stock.id)" class="btn btn-info">Update</button>
+                <button (click) = "deleteStock(stock.id)" class="btn btn-danger" style="margin-left: 10px">Delete</button>
+                <button (click) = "stockDetails(stock.id)" class="btn btn-primary" style="margin-left: 10px">View</button>
+            </td>
+
+        </tr>
+    </tbody>
+</table>
+</div>

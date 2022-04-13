@@ -1,0 +1,28 @@
+
+<h1>Co</h1>
+<div class="container">
+    <div class="card">
+        <h2 class="text-center">Category List</h2>
+        <div class="card-body">
+<table class="table table-sm">
+<thead class="table table-striped">
+    <tr>
+        
+        <th>#</th>
+        <th>Name Category</th>
+        
+    </tr>
+</thead>
+<tbody>
+    <tr *ngFor="let category of categorys">
+        <td>{{category.idCat}}</td>
+        <td>{{category.nom}}</td>
+        
+        <td>
+            <button (click)="deleteCateg(category.idCat)"  class="btn btn-danger">Delete</button>
+        </td>
+    </tr>
+
+
+</tbody>
+</table>

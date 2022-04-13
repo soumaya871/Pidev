@@ -1,0 +1,47 @@
+<p>order works!</p>
+<h1>helloooooo</h1>
+<div class="container">
+    <div class="card">
+        <h3 class="text-center">Orders List</h3>
+        <div class="panel-body">
+           <button class="btn btn-success" (click)="getorders()"></button>
+                  <table    class="table table-bordered"  valign="bottom">
+         
+                <thead>
+                    <th>id</th>
+                    <th>Date</th>
+                    <th>montant</th>
+                    <th>status</th>
+                    <th>typedePayment</th>
+                 
+                </thead>
+               
+                    <tbody >
+                       <tr *ngFor ="let order of l ">
+                        <td>{{order.id}}</td>
+                        <td>{{order.date}}</td>
+                        <td >{{order.montant}}</td>
+                        <td >{{order.status}}</td>
+                        <td text-align: center>{{order.typedePayment}}</td>
+                        <td >
+                        <button class="btn btn-danger" (click)=" deleteOrder(order.id)" >Delete</button>
+                      </td>
+                         
+                  </tr>
+                </tbody>
+               
+            </table>
+            
+           
+           
+        </div>
+   
+      
+        
+       
+        
+    </div>
+
+</div>
+
+

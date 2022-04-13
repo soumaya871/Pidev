@@ -1,0 +1,78 @@
+body {
+    background-color: #9fc4fb
+}
+p{
+    color: rgb(143, 3, 3);
+}
+
+.container-fluid {
+    background-color: #cdcecf
+}
+
+.msg-form {
+    background-color: white;
+    padding: 20px
+}
+
+.pad-icon {
+    padding-top: 50px;
+    padding-left: 20px
+}
+
+.pad-icon a {
+    text-decoration: none;
+    margin-right: 40px
+}
+
+.input-group input:focus {
+    border: 1px solid blue
+}
+
+.pad-icon a:active {
+    height: 30px;
+    width: 30px;
+    background-color: #0080ff;
+    border-radius: 100%
+}
+h5{
+color: rgb(7, 7, 7);
+font-family:"Comic Sans MS";
+}
+h2
+
+
+
+{   color: darkred;
+    font-family:"Comic Sans MS";
+}
+.cordonee {
+    padding-top: 50px;
+    width: 50%;
+    color: maroon;
+   }
+
+#bordering a:active {
+    border: 1px solid #0080ff
+}
+
+@media(min-width:568px) {
+    .container-fluid {
+        margin: 100px 30px;
+        width: 96%;
+        padding-top: 50px;
+        padding-bottom: 50px
+    }
+}
+
+@media(max-width:567px) {
+    .container-fluid {
+        margin: 10px 10px;
+        width: 94%;
+        padding-top: 20px;
+        padding-bottom: 20px
+    }
+
+    .pad {
+        padding-top: 20px
+    }
+}

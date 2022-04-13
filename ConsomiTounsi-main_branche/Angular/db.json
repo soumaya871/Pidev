@@ -1,0 +1,25 @@
+{
+  "Products": [
+    {
+      "id": 1,
+      "title": "Ecouteur",
+      "price": "20",
+      "quantity":"2"
+    },
+    {
+      "id": 2,
+      "title": "EcranSolaire",
+      "price": "90",
+      "quantity":"12"
+    }
+  ],
+  "client": [
+    {
+      "id": 1,
+      "Name": "Soumaya Hadidane"
+      
+    }
+  ]
+
+
+}
